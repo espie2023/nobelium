@@ -14,21 +14,21 @@ import Scripts from '@/components/Scripts'
 
 
 //Add the Vercel Analytics component to your app
-import type { AppProps } from 'next/app';
+//import type { AppProps } from 'next/app';
 import { Analytics } from '@vercel/analytics/next';
  
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <Component {...pageProps} />
-      <Analytics />
-    </>
-  );
-}
+//function MyApp({ Component, pageProps }: AppProps) {
+//  return (
+//    <>
+//      <Component {...pageProps} />
+//      <Analytics />
+//    </>
+//  );
+//}
  
 export default MyApp;
 
-//以下为原有文件
+//
 const Ackee = dynamic(() => import('@/components/Ackee'), { ssr: false })
 const Gtag = dynamic(() => import('@/components/Gtag'), { ssr: false })
 
@@ -47,6 +47,8 @@ export default function MyApp ({ Component, pageProps, config, locale }) {
             )}
             {process.env.VERCEL_ENV === 'production' && config?.analytics?.provider === 'ga' && <Gtag />}
             <Component {...pageProps} />
+            <Analytics /> 
+            //Add the Vercel Analytics component to your app
           </>
         </ThemeProvider>
       </LocaleProvider>
