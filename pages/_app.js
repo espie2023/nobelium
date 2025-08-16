@@ -26,7 +26,7 @@ import { Analytics } from '@vercel/analytics/next';
 //  );
 //}
  
-export default MyApp;
+//export default MyApp;
 
 //
 const Ackee = dynamic(() => import('@/components/Ackee'), { ssr: false })
