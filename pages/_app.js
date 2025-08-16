@@ -48,7 +48,6 @@ export default function MyApp ({ Component, pageProps, config, locale }) {
             {process.env.VERCEL_ENV === 'production' && config?.analytics?.provider === 'ga' && <Gtag />}
             <Component {...pageProps} />
             <Analytics /> 
-            //Add the Vercel Analytics component to your app
           </>
         </ThemeProvider>
       </LocaleProvider>
